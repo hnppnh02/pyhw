@@ -1,4 +1,5 @@
 import csv
+import os
 import traceback
 
 
@@ -71,7 +72,6 @@ def employee_dict(row):
             result[field] = row[i]
     return result
 
-
 print(employee_dict(employees["rows"][0]))
 
 
@@ -81,8 +81,11 @@ def all_employees_dict():
         result[row[employee_id_column]] = employee_dict(row)
     return result
 
-
 print(all_employees_dict())
+
+
+def get_this_value():
+    return os.environ.get("THISVALUE")
 
 
 
