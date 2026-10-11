@@ -27,16 +27,21 @@ def read_employees():
         print(f"Stack trace: {stack_trace}")
         exit(1)
 
-
 employees = read_employees()
 print(employees)
+
 
 
 def column_index(name):
     return employees["fields"].index(name)
 
-
 employee_id_column = column_index("employee_id")
+
+
+def first_name(row_number):
+    first_name_column = column_index("first_name")
+    row = employees["rows"][row_number]
+    return row[first_name_column]
 
 
 
