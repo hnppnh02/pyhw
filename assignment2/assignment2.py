@@ -115,10 +115,17 @@ def read_minutes():
     minutes2 = read_minutes_file("../csv/minutes2.csv")
     return minutes1, minutes2
 
-
 minutes1, minutes2 = read_minutes()
 print(minutes1)
 print(minutes2)
+
+
+def create_minutes_set():
+    set1 = set(minutes1["rows"])
+    set2 = set(minutes2["rows"])
+    return set1.union(set2)
+
+minutes_set = create_minutes_set()
 
 
 
