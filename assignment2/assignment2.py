@@ -133,9 +133,21 @@ def create_minutes_list():
     minutes_list = list(minutes_set)
     return list(map(lambda x: (x[0], datetime.strptime(x[1], "%B %d, %Y")), minutes_list))
 
-
 minutes_list = create_minutes_list()
 print(minutes_list)
+
+
+def write_sorted_list():
+    minutes_list.sort(key=lambda x: x[1])
+    converted_list = list(map(lambda x: (x[0], datetime.strftime(x[1], "%B %d, %Y")), minutes_list))
+    with open("./minutes.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(minutes1["fields"])
+        writer.writerows(converted_list)
+    return converted_list
+
+
+write_sorted_list()
 
 
 
