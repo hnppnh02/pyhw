@@ -75,4 +75,14 @@ def employee_dict(row):
 print(employee_dict(employees["rows"][0]))
 
 
+def all_employees_dict():
+    result = {}
+    for row in employees["rows"]:
+        result[row[employee_id_column]] = employee_dict(row)
+    return result
+
+
+print(all_employees_dict())
+
+
 
