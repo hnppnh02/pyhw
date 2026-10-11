@@ -58,4 +58,10 @@ def employee_find_2(employee_id):
     return matches
 
 
+def sort_by_last_name():
+    last_name_column = column_index("last_name")
+    employees["rows"].sort(key=lambda row: row[last_name_column])
+    return employees["rows"]
+
+
 
