@@ -1,6 +1,7 @@
 import csv
 import os
 import traceback
+import custom_module
 
 
 def read_employees():
@@ -86,6 +87,14 @@ print(all_employees_dict())
 
 def get_this_value():
     return os.environ.get("THISVALUE")
+
+
+def set_that_secret(new_secret):
+    custom_module.set_secret(new_secret)
+
+
+set_that_secret("swordfish")
+print(custom_module.secret)
 
 
 
