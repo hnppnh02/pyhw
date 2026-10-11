@@ -64,4 +64,15 @@ def sort_by_last_name():
     return employees["rows"]
 
 
+def employee_dict(row):
+    result = {}
+    for i, field in enumerate(employees["fields"]):
+        if i != employee_id_column:
+            result[field] = row[i]
+    return result
+
+
+print(employee_dict(employees["rows"][0]))
+
+
 
